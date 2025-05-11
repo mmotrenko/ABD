@@ -11,8 +11,9 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{672096A0-8D4D-4EC8-A624-3B4E94E9AE7F}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{4F972E30-B846-4184-BB6C-EE08B6B48417}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +29,7 @@
           DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR04;Initial Catalog=ABD_GR04_SRC3;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{842A2886-0321-4E2C-A01C-6AF3B21F7077}194.29.170.4.ABD_GR04_SRC3.ABDGR04;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5zQQJrhFUUyKfQqAH16zdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAnLZKajrJBmm+qFhUwSEZvIZa8AO7hWluSXN8ehW9c1wAAAAAOgAAAAAIAACAAAAC3+JBBc1cFLRiRa2btetv1lBwPOBA9X9mUgpLt+semwxAAAAC/BSMygIT+ryaDLR3z8a9gQAAAAMg2pQaDX2BFxW9EqPMYK6tjGYe2qHA79VUgawveTtsNrRxiHOOzdq1sl3b3rRMFsWoiUlWDox2kisp8+TgRkW4</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

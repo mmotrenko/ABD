@@ -11,8 +11,9 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{F5377EF1-ECB2-40AD-BA36-C79A454694A3}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A315A3E6-E59F-4513-BCEB-7EC4E7AC5578}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +29,7 @@
           DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR04;Initial Catalog=ABD_GR04_SRC2;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{0559D611-D668-40C9-87D4-1294A70E8FEE}194.29.170.4.ABD_GR04_SRC2.ABDGR04;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5zQQJrhFUUyKfQqAH16zdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABuRkdXanJr6fbNoO42LqTlP70kpBIaWJJaUgP+yl/HfgAAAAAOgAAAAAIAACAAAACo5cyIttI7mdRxG7QEJa/21hC/RZJ8JIDNN7Im+JcESRAAAACNxJbGiqf4+UU56co7Y53pQAAAAGJH3s83lLu2wVxwK8r6mGhIEklVniZC3AK0N0Cwpp686MPrF0lwF08F0vcCbABYvT++nKaGPGMrh2NQ962ZeYM</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -497,13 +497,13 @@ WHERE Data_modyfikacji &gt;= DATEADD(day, -1, CAST(CURRENT_TIMESTAMP AS date));<
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="213,90" />
-        <NodeLayout
           Size="155,42"
           Id="Package\Data Flow Task"
           TopLeft="232,239" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="213,90" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="298,132">
@@ -580,7 +580,7 @@ WHERE Data_modyfikacji &gt;= DATEADD(day, -1, CAST(CURRENT_TIMESTAMP AS date));<
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -593,7 +593,7 @@ WHERE Data_modyfikacji &gt;= DATEADD(day, -1, CAST(CURRENT_TIMESTAMP AS date));<
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,8 +11,9 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{06481BFF-C315-4254-AC33-8A8D75ADA099}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{7B734940-7196-40DF-8287-DFFB4AB1C27D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -266,8 +267,8 @@ from
               <connections>
                 <connection
                   refId="Package\ładowanie DimPlatnoscST\Insert Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_DW.ABDGR04]"
+                  connectionManagerID="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:invalid"
+                  connectionManagerRefId="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -395,8 +396,8 @@ from
               <connections>
                 <connection
                   refId="Package\ładowanie DimPlatnoscST\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_DW.ABDGR04]"
+                  connectionManagerID="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:invalid"
+                  connectionManagerRefId="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -568,8 +569,8 @@ from
               <connections>
                 <connection
                   refId="Package\ładowanie DimPlatnoscST\Slowly Changing Dimension.Connections[LookupConnection]"
-                  connectionManagerID="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_DW.ABDGR04]"
+                  connectionManagerID="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:invalid"
+                  connectionManagerRefId="{3E891CA5-EBD8-43DF-9C4F-EF9367C9359D}:invalid"
                   description="Defines the connection to use for lookups in the dimension table"
                   name="LookupConnection" />
               </connections>

@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR04;Initial Catalog=ABD_GR04_SRC2;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{535B1AF4-12E7-421D-A0BC-22824A90D76C}194.29.170.4.ABD_GR04_SRC2.ABDGR04;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5zQQJrhFUUyKfQqAH16zdgAAAAACAAAAAAAQZgAAAAEAACAAAAAkxR6y0mPl7pQrDVkv7NEQmrfzza0ZLmF+mmG9A1EfkQAAAAAOgAAAAAIAACAAAABj2GjB2up0SeMhOLwz1GR3PjTvKB/Yzfq3WIE6mMOuCoAAAAAI44/GznmTYrQHDHrFijndze7d1iZKfjuJ5DJffJ7LXyhQz380eGWTE/WQcMwOm5UTmFIUVp8Ur5+HN0LrCZ0zDW92/rxbU13YMIA1o4L6Gg5T4y+7bLhAVDB2Zl4Svi9z3S0twdmjVFFkUGyPRJ9O9gJ4c57H9JlHD7y9oR4U2EAAAABMeslkN7sYox1sljtZUZkEeV14etli1HRS+z3jCUP/SKDG4+d0slXSRvlu0zu5GY4fl2mdvqZUzXC7vhgMJY1O</DTS:Password>
+        Sensitive="1"></DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

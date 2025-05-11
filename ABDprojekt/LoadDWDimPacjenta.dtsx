@@ -11,8 +11,9 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{3D305152-0FFA-41C1-96CC-E61AE1905DB6}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{0511987F-3E8C-4E53-AB19-5A7E2E57B10C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +29,7 @@
           DTS:ConnectionString="Data Source=194.29.170.4;User ID=ABDGR04;Initial Catalog=ABD_GR04_SRC3;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{BEDA9A73-D1B2-4AFE-949C-128244FAD545}194.29.170.4.ABD_GR04_SRC3.ABDGR04;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5zQQJrhFUUyKfQqAH16zdgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUW1r/kvWm8gXQdJv8f01QGR8+nexpY5u/HJ5GVmlL+AAAAAAOgAAAAAIAACAAAACxBSAGiilKEanBWmAgJBOR3yUMoLIRq5BeQMXgxOpB4RAAAACVC4hh8F/ITZtRV8vA2rMmQAAAAPzLzoaUzJSoX3A6xSPQ8iiDVFr3jc4bLmvXVpcfnK7IfNbs1MIXIN9M25TbuY52q4N0tC2QFDqy+405vuc0DTM</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1531,19 +1531,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\ładowanie wymiaru tabeli Pacjent\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\ładowanie wymiaru tabeli Pacjent\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -1643,6 +1630,19 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie wymiaru tabeli Pacjent\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
