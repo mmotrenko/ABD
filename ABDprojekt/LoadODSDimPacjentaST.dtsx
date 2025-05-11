@@ -1,0 +1,846 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/13/2025 8:19:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LHUEAQ5"
+  DTS:CreatorName="DESKTOP-LHUEAQ5\mateu"
+  DTS:DTSID="{36583DA9-E671-43CD-943C-7FBEF49641B5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{6E5363F3-C009-48AC-8D9B-B23CD93622FC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ECBFDF4D-7D0A-44FF-907A-08A0F9AAED4D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Tabela DImPacjentaST"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Tabela DImPacjentaST"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimPacjentaST]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Tabela DImPacjentaST.Connections[OleDbConnection]"
+                  connectionManagerID="{729A3AFC-1168-4A3D-AA2A-3618E7A9FD2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_ODS.ABDGR04]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Imie]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Imie"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Imie]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Imie]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Nazwisko"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Nazwisko]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Nazwisko]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="Pesel"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Pesel]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Pesel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Plec]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Plec"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Plec]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Plec]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Ulica]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="Ulica"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Ulica]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Ulica]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Data_urodzenia]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Data_urodzenia"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataUrodzenia]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_urodzenia]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Id_adresu]"
+                      cachedDataType="i4"
+                      cachedName="Id_adresu"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[IdAdresuPacjentaT]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_adresu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Miasto]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Miasto"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[MiastoPacjenta]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Miasto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Data_rejestracji]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Data_rejestracji"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataRejestracji]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_rejestracji]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Data_wystawienia]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Data_wystawienia"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataWystawieniaRecepty]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_wystawienia]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Id_recepty]"
+                      cachedDataType="i4"
+                      cachedName="Id_recepty"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[IdReceptyT]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_recepty]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].Columns[Id_pacjenta]"
+                      cachedDataType="i4"
+                      cachedName="Id_pacjenta"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[IdPacjenta]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_pacjenta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="Imie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="Nazwisko" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="11"
+                      name="Pesel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataUrodzenia]"
+                      dataType="wstr"
+                      length="10"
+                      name="DataUrodzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Plec]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      name="Plec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataUtworzenia]"
+                      dataType="wstr"
+                      length="26"
+                      name="DataUtworzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[IdAdresuPacjentaT]"
+                      dataType="i4"
+                      name="IdAdresuPacjentaT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[MiastoPacjenta]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="MiastoPacjenta" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataRejestracji]"
+                      dataType="wstr"
+                      length="10"
+                      name="DataRejestracji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[Ulica]"
+                      codePage="1250"
+                      dataType="str"
+                      length="400"
+                      name="Ulica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataWystawieniaRecepty]"
+                      dataType="wstr"
+                      length="10"
+                      name="DataWystawieniaRecepty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[IdReceptyT]"
+                      dataType="i4"
+                      name="IdReceptyT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[DataModyfikacji]"
+                      dataType="wstr"
+                      length="10"
+                      name="DataModyfikacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input].ExternalColumns[IdPacjenta]"
+                      dataType="i4"
+                      name="IdPacjenta" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Tabela DImPacjentaST.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela DImPacjentaST.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela DImPacjentaST.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela DImPacjentaST.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Tabela Pacjent"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Tabela Pacjent"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select
+p.[Id_pacjenta],
+p.[Imie],
+p.[Nazwisko],
+p.[Pesel],
+p.[Data_urodzenia],
+p.[Plec],
+a.[Miasto],
+p.[Data_rejestracji],
+a.[Ulica],
+r.[Data_wystawienia],
+p.[Id_adresu],
+p.[Id_recepty]
+
+from
+
+[dbo].[Pacjent] p inner join [dbo].[Adres] a on p.[Id_adresu] = a.[Id_adresu]
+ inner join [dbo].[Recepta] r on p.Id_recepty = r.Id_recepty
+ Where p.[Data_modyfikacji] &gt;= dateadd(day,-1,cast(CURRENT_TIMESTAMP as date))
+ union
+Select
+p.[Id_pacjenta],
+p.[Imie],
+p.[Nazwisko],
+p.[Pesel],
+p.[Data_urodzenia],
+p.[Plec],
+a.[Miasto],
+p.[Data_rejestracji],
+a.[Ulica],
+r.[Data_wystawienia],
+p.[Id_adresu],
+p.[Id_recepty]
+from
+
+[dbo].[Pacjent] p inner join [dbo].[Adres] a on p.[Id_adresu] = a.[Id_adresu]
+ inner join [dbo].[Recepta] r on p.Id_recepty = r.Id_recepty
+ Where r.[Data_modyfikacji] &gt;= dateadd(day,-1,cast(CURRENT_TIMESTAMP as date))
+ union
+ Select
+p.[Id_pacjenta],
+p.[Imie],
+p.[Nazwisko],
+p.[Pesel],
+p.[Data_urodzenia],
+p.[Plec],
+a.[Miasto],
+p.[Data_rejestracji],
+a.[Ulica],
+r.[Data_wystawienia],
+p.[Id_adresu],
+p.[Id_recepty]
+from
+
+[dbo].[Pacjent] p inner join [dbo].[Adres] a on p.[Id_adresu] = a.[Id_adresu]
+ inner join [dbo].[Recepta] r on p.Id_recepty = r.Id_recepty
+ Where a.[Data_modyfikacji] &gt;= dateadd(day,-1,cast(CURRENT_TIMESTAMP as date))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Tabela Pacjent.Connections[OleDbConnection]"
+                  connectionManagerID="{2B2D7520-DC56-4585-83C6-B200BDE92463}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_SRC1.ABDGR04]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_pacjenta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Id_pacjenta]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_pacjenta]"
+                      name="Id_pacjenta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Imie]"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Imie]"
+                      name="Imie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Nazwisko]"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Nazwisko]"
+                      name="Nazwisko"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Pesel]"
+                      length="11"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Pesel]"
+                      name="Pesel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_urodzenia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Data_urodzenia]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_urodzenia]"
+                      name="Data_urodzenia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Plec]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Plec]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Plec]"
+                      name="Plec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Miasto]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Miasto]"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Miasto]"
+                      name="Miasto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_rejestracji]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Data_rejestracji]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_rejestracji]"
+                      name="Data_rejestracji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Ulica]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Ulica]"
+                      length="400"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Ulica]"
+                      name="Ulica"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_wystawienia]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Data_wystawienia]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Data_wystawienia]"
+                      name="Data_wystawienia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_adresu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Id_adresu]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_adresu]"
+                      name="Id_adresu"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_recepty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Id_recepty]"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].Columns[Id_recepty]"
+                      name="Id_recepty"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Id_pacjenta]"
+                      dataType="i4"
+                      name="Id_pacjenta" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      name="Imie" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      name="Nazwisko" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="11"
+                      name="Pesel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Data_urodzenia]"
+                      dataType="dbTimeStamp"
+                      name="Data_urodzenia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Plec]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      name="Plec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Miasto]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      name="Miasto" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Data_rejestracji]"
+                      dataType="dbTimeStamp"
+                      name="Data_rejestracji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Ulica]"
+                      codePage="1250"
+                      dataType="str"
+                      length="400"
+                      name="Ulica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Data_wystawienia]"
+                      dataType="dbTimeStamp"
+                      name="Data_wystawienia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Id_adresu]"
+                      dataType="i4"
+                      name="Id_adresu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output].ExternalColumns[Id_recepty]"
+                      dataType="i4"
+                      name="Id_recepty" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Id_pacjenta]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Id_pacjenta]"
+                      name="Id_pacjenta" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Imie]"
+                      name="Imie" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Nazwisko]"
+                      name="Nazwisko" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Pesel]"
+                      name="Pesel" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Data_urodzenia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Data_urodzenia]"
+                      name="Data_urodzenia" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Plec]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Plec]"
+                      name="Plec" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Miasto]"
+                      codePage="1250"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Miasto]"
+                      name="Miasto" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Data_rejestracji]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Data_rejestracji]"
+                      name="Data_rejestracji" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Ulica]"
+                      codePage="1250"
+                      dataType="str"
+                      length="400"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Ulica]"
+                      name="Ulica" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Data_wystawienia]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Data_wystawienia]"
+                      name="Data_wystawienia" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Id_adresu]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Id_adresu]"
+                      name="Id_adresu" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Id_recepty]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[Id_recepty]"
+                      name="Id_recepty" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Tabela DImPacjentaST.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Tabela Pacjent.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="czyszczenie"
+      DTS:DTSID="{42926E69-9F6D-46EB-97FD-C50404D9B7EE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{729A3AFC-1168-4A3D-AA2A-3618E7A9FD2A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE DimPacjentaST" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F55A07C-9B3B-4F61-9909-4D0E0A75491B}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task"
+          TopLeft="181,232" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="166,67" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="254.75,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,123"
+              Start="0,0"
+              End="0,115.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow Task\Tabela Pacjent"
+          TopLeft="264,98" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Data Flow Task\Tabela DImPacjentaST"
+          TopLeft="253,243" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="340,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,103"
+              Start="0,0"
+              End="9.5,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.5"
+                    Point2="0,51.5"
+                    Point3="4,51.5" />
+                  <mssgle:LineSegment
+                    End="5.5,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,51.5"
+                    Point2="9.5,51.5"
+                    Point3="9.5,55.5" />
+                  <mssgle:LineSegment
+                    End="9.5,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Tabela DImPacjentaST">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Tabela Pacjent">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

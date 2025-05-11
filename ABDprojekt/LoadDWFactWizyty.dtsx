@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/13/2025 11:59:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LHUEAQ5"
+  DTS:CreatorName="DESKTOP-LHUEAQ5\mateu"
+  DTS:DTSID="{E97C1503-FD7E-491C-B1CC-2A590141F8E0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{2B290748-EE3D-483D-9370-8E493CCAEF3F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ładowanie tabeli wizyty"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4A30DA8C-B493-4F8A-A318-60F9DC3CC377}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ładowanie tabeli wizyty"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ładowanie tabeli wizyty\DImCzas"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DImCzas"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCzasu]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCzasu]) [refTable]
+where [refTable].[Data] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdCzasu" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Data" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DzienMiesiaca" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Miesiac" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Kwartal" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Rok" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DzienTygodnia" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazwaMiesiaca" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="NazwaDniaTygodnia" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="DataUtworzenia" dataType="DT_WSTR" length="26" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataModyfikacji" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataWizyty]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wizyty\DImCzas.Connections[OleDbConnection]"
+                  connectionManagerID="{DEA58CB6-9C4D-429E-8C00-73A7AA67C3A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_SRC3.ABDGR04]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ładowanie tabeli wizyty\DImCzas.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\DImCzas.Inputs[Lookup Input].Columns[DataWizyty]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="DataWizyty"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataWizyty]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Data</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DImCzas.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Match Output].Columns[IdCzasu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Match Output].Columns[IdCzasu]"
+                      name="IdCzasu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdCzasu</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DImCzas.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DImCzas.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ładowanie tabeli wizyty\DimPacjenta"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimPacjenta"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPacjenta]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPacjenta]) [refTable]
+where [refTable].[IdPacjentT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdPacjenta" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Imie" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="Nazwisko" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="Pesel" dataType="DT_STR" length="11" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="DataUrodzenia" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Plec" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="DataUtworzenia" dataType="DT_WSTR" length="26" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdAdresuPacjentaT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MiastoPacjenta" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="DataRejestracji" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Ulica" dataType="DT_STR" length="400" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="DataWystawieniaRecepty" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdReceptyT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataModyfikacji" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdPacjentT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPacjenta]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wizyty\DimPacjenta.Connections[OleDbConnection]"
+                  connectionManagerID="{DEA58CB6-9C4D-429E-8C00-73A7AA67C3A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_SRC3.ABDGR04]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ładowanie tabeli wizyty\DimPacjenta.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPacjenta.Inputs[Lookup Input].Columns[IdPacjenta]"
+                      cachedDataType="i4"
+                      cachedName="IdPacjenta"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPacjenta]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdPacjentT</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdPacjenta</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPacjenta.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPacjenta.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPacjenta.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ładowanie tabeli wizyty\DimPlacowki"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimPlacowki"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPlacowki]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPlacowki]) [refTable]
+where [refTable].[IdPlacowkiT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdPlacowki" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NazwaSieci" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="LiczbaPracownikow" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LiczbaGabinetow" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DzienTygodniaOtwarcia" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="DzienTygodniaZamkniecia" dataType="DT_STR" length="40" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="GodzinaOtwarcia" dataType="DT_WSTR" length="16" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GodzinaZamkniecia" dataType="DT_WSTR" length="16" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdSieciT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdAdresuPlacowkiT" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataUtworzenia" dataType="DT_WSTR" length="26" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataModyfikacji" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RefundacjaNFZ" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IdPlacowkiT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPlacowki]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wizyty\DimPlacowki.Connections[OleDbConnection]"
+                  connectionManagerID="{DEA58CB6-9C4D-429E-8C00-73A7AA67C3A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_SRC3.ABDGR04]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ładowanie tabeli wizyty\DimPlacowki.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPlacowki.Inputs[Lookup Input].Columns[IdPlacowki]"
+                      cachedDataType="i4"
+                      cachedName="IdPlacowki"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPlacowki]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdPlacowkiT</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdPlacowki</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPlacowki.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPlacowki.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPlacowki.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ładowanie tabeli wizyty\DimPlatnosci"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="DimPlatnosci"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPlatnosc]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPlatnosc]) [refTable]
+where [refTable].[IdOplatyT] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="IdOplaty" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Kwota" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataPlatnosci" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataUtworzenia" dataType="DT_WSTR" length="26" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DataModyfikacji" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MetodaPlatnosci" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1250"/&gt;&lt;referenceColumn name="IdOplatyT" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdOplaty]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Connections[OleDbConnection]"
+                  connectionManagerID="{DEA58CB6-9C4D-429E-8C00-73A7AA67C3A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_SRC3.ABDGR04]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Inputs[Lookup Input].Columns[IdOplaty]"
+                      cachedDataType="i4"
+                      cachedName="IdOplaty"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdOplaty]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IdOplatyT</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">IdOplaty</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPlatnosci.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPlatnosci.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\DimPlatnosci.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ładowanie tabeli wizyty\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactWizyty]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{DEA58CB6-9C4D-429E-8C00-73A7AA67C3A6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_SRC3.ABDGR04]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SumarycznaWartoscRefundacji]"
+                      cachedDataType="cy"
+                      cachedName="SumarycznaWartoscRefundacji"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SumarycznaWartoscRefundacji]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[SumarycznaWartoscRefundacji]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LiczbaWizyt]"
+                      cachedDataType="i4"
+                      cachedName="LiczbaWizyt"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LiczbaWizyt]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[LiczbaWizyt]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IdCzasu]"
+                      cachedDataType="i4"
+                      cachedName="IdCzasu"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdCzasu]"
+                      lineageId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Match Output].Columns[IdCzasu]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IdPlacowki]"
+                      cachedDataType="i4"
+                      cachedName="IdPlacowki"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdPlacowki]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPlacowki]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IdOplaty]"
+                      cachedDataType="i4"
+                      cachedName="IdOplaty"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdOplaty]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdOplaty]" />
+                    <inputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IdPacjenta]"
+                      cachedDataType="i4"
+                      cachedName="IdPacjenta"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdPacjenta]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPacjenta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdPlacowki]"
+                      dataType="i4"
+                      name="IdPlacowki" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdOplaty]"
+                      dataType="i4"
+                      name="IdOplaty" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdCzasu]"
+                      dataType="i4"
+                      name="IdCzasu" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IdPacjenta]"
+                      dataType="i4"
+                      name="IdPacjenta" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SumarycznaWartoscRefundacji]"
+                      dataType="cy"
+                      name="SumarycznaWartoscRefundacji" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LiczbaWizyt]"
+                      dataType="i4"
+                      name="LiczbaWizyt" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataUtworzenia]"
+                      dataType="dbTimeStamp"
+                      name="DataUtworzenia" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ładowanie tabeli wizyty\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactWizytyST]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+        CAST(DataWizyty AS date)              AS DataWizyty,          -- zrzucamy godzinę
+        IdPlacowki,
+        IdPacjenta,
+        IdOplaty,                                                    -- może być NULL
+        COUNT(*)                               AS LiczbaWizyt,       -- ile wizyt w danym dniu
+        SUM(WartoscRefundacji)                 AS SumarycznaWartoscRefundacji
+FROM    ABD_GR04_ODS.dbo.FactWizytyST
+GROUP BY
+        CAST(DataWizyty AS date),
+        IdPlacowki,
+        IdPacjenta,
+        IdOplaty;                -- jeśli IdOplaty ma być pomijane, usuń z SELECT-a i GROUP BY</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ładowanie tabeli wizyty\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{729A3AFC-1168-4A3D-AA2A-3618E7A9FD2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[194.29.170.4.ABD_GR04_ODS.ABDGR04]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdOplaty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdOplaty]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdOplaty]"
+                      name="IdOplaty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPacjenta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdPacjenta]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPacjenta]"
+                      name="IdPacjenta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPlacowki]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdPlacowki]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdPlacowki]"
+                      name="IdPlacowki"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[SumarycznaWartoscRefundacji]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SumarycznaWartoscRefundacji]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[SumarycznaWartoscRefundacji]"
+                      name="SumarycznaWartoscRefundacji"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[LiczbaWizyt]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LiczbaWizyt]"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[LiczbaWizyt]"
+                      name="LiczbaWizyt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataWizyty]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DataWizyty]"
+                      length="10"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].Columns[DataWizyty]"
+                      name="DataWizyty"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdOplaty]"
+                      dataType="i4"
+                      name="IdOplaty" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdPacjenta]"
+                      dataType="i4"
+                      name="IdPacjenta" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IdPlacowki]"
+                      dataType="i4"
+                      name="IdPlacowki" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SumarycznaWartoscRefundacji]"
+                      dataType="cy"
+                      name="SumarycznaWartoscRefundacji" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LiczbaWizyt]"
+                      dataType="i4"
+                      name="LiczbaWizyt" />
+                    <externalMetadataColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DataWizyty]"
+                      dataType="wstr"
+                      length="10"
+                      name="DataWizyty" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SumarycznaWartoscRefundacji]"
+                      dataType="cy"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SumarycznaWartoscRefundacji]"
+                      name="SumarycznaWartoscRefundacji" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LiczbaWizyt]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LiczbaWizyt]"
+                      name="LiczbaWizyt" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdOplaty]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdOplaty]"
+                      name="IdOplaty" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdPacjenta]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdPacjenta]"
+                      name="IdPacjenta" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdPlacowki]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IdPlacowki]"
+                      name="IdPlacowki" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DataWizyty]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DataWizyty]"
+                      name="DataWizyty" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output]"
+              endId="Package\ładowanie tabeli wizyty\DimPlacowki.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\ładowanie tabeli wizyty\DImCzas.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output1]"
+              endId="Package\ładowanie tabeli wizyty\DimPacjenta.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\ładowanie tabeli wizyty\DimPlacowki.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output2]"
+              endId="Package\ładowanie tabeli wizyty\DimPlatnosci.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\ładowanie tabeli wizyty\DimPacjenta.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output3]"
+              endId="Package\ładowanie tabeli wizyty\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\ładowanie tabeli wizyty\DimPlatnosci.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ładowanie tabeli wizyty.Paths[OLE DB Source Output]"
+              endId="Package\ładowanie tabeli wizyty\DImCzas.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\ładowanie tabeli wizyty\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\ładowanie tabeli wizyty"
+          TopLeft="199,89" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ładowanie tabeli wizyty">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="124,42"
+          Id="Package\ładowanie tabeli wizyty\DImCzas"
+          TopLeft="252,148" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\ładowanie tabeli wizyty\OLE DB Source"
+          TopLeft="191,32" />
+        <EdgeLayout
+          Id="Package\ładowanie tabeli wizyty.Paths[OLE DB Source Output]"
+          TopLeft="269.5,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.5,74"
+              Start="0,0"
+              End="44.5,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="40.5,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.5,37"
+                    Point2="44.5,37"
+                    Point3="44.5,41" />
+                  <mssgle:LineSegment
+                    End="44.5,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\ładowanie tabeli wizyty\DimPlacowki"
+          TopLeft="396,218" />
+        <EdgeLayout
+          Id="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output]"
+          TopLeft="314,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153,28"
+              Start="0,0"
+              End="153,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="149,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149,14"
+                    Point2="153,14"
+                    Point3="153,18" />
+                  <mssgle:LineSegment
+                    End="153,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="28.30861328125,19,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\ładowanie tabeli wizyty\DimPacjenta"
+          TopLeft="612,186" />
+        <EdgeLayout
+          Id="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output1]"
+          TopLeft="538,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,-32"
+              Start="0,0"
+              End="66.5,-32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33,0"
+                    Point2="37,0"
+                    Point3="37,-4" />
+                  <mssgle:LineSegment
+                    End="37,-28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37,-28"
+                    Point2="37,-32"
+                    Point3="41,-32" />
+                  <mssgle:LineSegment
+                    End="66.5,-32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.0600390625,1,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="143,42"
+          Id="Package\ładowanie tabeli wizyty\DimPlatnosci"
+          TopLeft="852,178" />
+        <EdgeLayout
+          Id="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output2]"
+          TopLeft="753,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,-8"
+              Start="0,0"
+              End="91.5,-8">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,0"
+                    Point2="49.5,0"
+                    Point3="49.5,-4" />
+                  <mssgle:LineSegment
+                    End="49.5,-4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.5,-4"
+                    Point2="49.5,-8"
+                    Point3="53.5,-8" />
+                  <mssgle:LineSegment
+                    End="91.5,-8" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.5600390625,1,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\ładowanie tabeli wizyty\OLE DB Destination"
+          TopLeft="1060,180" />
+        <EdgeLayout
+          Id="Package\ładowanie tabeli wizyty.Paths[Lookup Match Output3]"
+          TopLeft="995,200">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65,0"
+              Start="0,0"
+              End="57.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="57.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wizyty\DImCzas">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCzasu]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wizyty\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wizyty\DimPlacowki">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPlacowki]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wizyty\DimPacjenta">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPacjenta]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wizyty\DimPlatnosci">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPlatnosc]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ładowanie tabeli wizyty\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
